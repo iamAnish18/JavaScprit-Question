@@ -85,3 +85,34 @@ if(pr3 === null){
         }
     }
 }
+
+let pr4 = prompt('enter the number');
+if (pr4 === null) {
+    console.log('cancled')
+} else {
+    let n = Number(pr4);
+    if (isNaN(n)) {
+        console.log('invalid input')
+    } else {
+        if (n > 0) {
+            let sum = 0;
+            let copy = n
+            while (n > 0) {
+                let rem = n % 10;
+                let fact = 1;
+                for (let i = 0; i <= rem; i++) {
+                    fact *= i;
+                }
+                sum += fact;
+                n = Math.floor(n / 10)
+            }
+            if (copy == sum) {
+                console.log('strong number')
+            } else {
+                console.log('not a strong number')
+            }
+        } else {
+            console.log('enter the postive number')
+        }
+    }
+}
